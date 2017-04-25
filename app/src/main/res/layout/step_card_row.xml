@@ -1,11 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    card_view:cardCornerRadius="5dp">
+
 <!-- Main Relative Layout-->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-
     android:background="#FFFFFF"
     android:padding="4dp">
 
@@ -20,7 +28,7 @@
         android:paddingTop="10dp"
         android:text="Date"
         android:textColor="@color/colorPrimary"
-        android:textSize="16dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <!-- TextView for displaying Systolic BP value-->
@@ -33,8 +41,8 @@
         android:paddingLeft="60dp"
         android:text="stepValue"
         android:textColor="@color/text_pink"
-        android:textSize="16sp"/>
-
-
+        android:textSize="18sp"/>
 
 </RelativeLayout>
+
+</android.support.v7.widget.CardView>
