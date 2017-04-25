@@ -44,7 +44,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/systolicValue"
+        android:id="@+id/tvSystolicValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvDate"
@@ -70,10 +70,10 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/diastolicValue"
+        android:id="@+id/tvDiastolicValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/systolicValue"
+        android:layout_below="@id/tvSystolicValue"
         android:layout_toRightOf="@+id/diastolic"
         android:paddingLeft="20dp"
         android:paddingTop="5dp"

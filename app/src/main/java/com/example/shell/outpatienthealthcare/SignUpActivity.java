@@ -108,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void createUser(){
-        Call<User> call = RestAPIClient.get().createUser(user);
+        Call<User> call = RestAPIClient.get().registerUser(user);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
