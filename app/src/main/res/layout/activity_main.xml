@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#90CAF9"
+    tools:context="com.example.shell.outpatienthealthcare.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Outpatient Healthcare"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:id="@+id/outpatientHealthcare"
+        android:textSize="32dp"
+        android:textAllCaps="false"
+        android:textStyle="normal|bold|italic"/>
+
+    <ImageView
+        android:layout_width="105dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/applogo"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:text="Sign Up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUp"
+        android:background="#90CAF9"
+        android:onClick="onSignUp"
+        android:textAllCaps="false"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/outpatientHealthcare"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Already a Member?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signUp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/signIn"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:onClick="onSignIn"
+        android:textStyle="normal|bold" />
+
+</LinearLayout>
