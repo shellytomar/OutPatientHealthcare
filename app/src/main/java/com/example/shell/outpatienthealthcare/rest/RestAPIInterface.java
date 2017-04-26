@@ -17,8 +17,8 @@ import retrofit2.http.Path;
         // Request method and URL specified in the annotation
         // Callback for the parsed response is the parameter
 
-        @POST("user")
-        Call<User> createUser(User user);
+        @POST("users")
+        Call<User> registerUser(User user);
 
         @GET("user")
         Call<User> readAllUsers(User user);
