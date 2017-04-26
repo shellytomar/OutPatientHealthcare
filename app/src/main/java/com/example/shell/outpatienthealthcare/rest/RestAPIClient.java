@@ -12,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RestAPIClient {
 
     private static RestAPIInterface REST_CLIENT;
-    private static final String BASE_URL = "http://http://outpatient.hep5pmeidw.us-west-1.elasticbeanstalk.com/rest/";
+    private static final String BASE_URL = "http://outpatient.hep5pmeidw.us-west-1.elasticbeanstalk.com/rest/";
 
     public RestAPIClient() {
     }
