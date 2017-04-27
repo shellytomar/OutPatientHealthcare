@@ -53,7 +53,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     }
 
     private void getAllUsers(){
-        Call<User> call = RestAPIClient.get().readAllUsers(user);
+        Call<User> call = RestAPIClient.get().getUsers(user);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
