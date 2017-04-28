@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#90CAF9"
+    android:background= "@color/colorPrimary"
     tools:context="com.example.shell.outpatienthealthcare.MainActivity">
 
     <TextView
@@ -29,31 +29,30 @@
         android:layout_gravity="center"/>
 
     <TextView
-        android:text="Sign Up"
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/signUp"
-        android:background="#90CAF9"
-        android:onClick="onSignUp"
-        android:textAllCaps="false"
-        android:layout_marginTop="100dp"
         android:layout_below="@+id/outpatientHealthcare"
         android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:onClick="onSignUp"
+        android:text="Sign Up"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="20dp"
-        android:textStyle="normal|bold" />
+        android:textSize="22dp"
+        android:textStyle="normal|bold|italic" />
 
     <TextView
-        android:text="Already a Member?"
+        android:id="@+id/signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signUp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:id="@+id/signIn"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
         android:onClick="onSignIn"
-        android:textStyle="normal|bold" />
+        android:text="Already a Member?"
+        android:textColor="@android:color/white"
+        android:textSize="22dp"
+        android:textStyle="normal|bold|italic" />
 
 </LinearLayout>

@@ -12,8 +12,8 @@ public class HeartBeat implements Serializable {
     private String date;
     private String maxTime;
     private String minTime;
-    private int minHeartRate;
-    private int maxHeartRate;
+    private int minHeartBeat;
+    private int maxHeartBeat;
 
     public int getId() {
         return id;
@@ -47,25 +47,19 @@ public class HeartBeat implements Serializable {
         this.minTime = minTime;
     }
 
-    public int getMinHeartRate() {
-        return minHeartRate;
+    public int getMinHeartBeat() {
+        return minHeartBeat;
     }
 
     public void setMinHeartRate(int minHeartRate) {
-        this.minHeartRate = minHeartRate;
+        this.minHeartBeat = minHeartBeat;
     }
 
-    public int getMaxHeartRate() {
-        return maxHeartRate;
+    public int getMaxHeartBeat() {
+        return maxHeartBeat;
     }
 
-    public void setMaxHeartRate(int maxHeartRate) {
-        this.maxHeartRate = maxHeartRate;
+    public void setMaxHeartBeat(int maxHeartBeat) {
+        this.maxHeartBeat = maxHeartBeat;
     }
-
-
-
-
-
-
 }

@@ -175,16 +175,16 @@
 
         <Button
             android:id="@+id/btn_continue"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_gravity="center"
             android:text="Continue"
-            android:background="@color/btn_background"
+            android:background="@drawable/blue_button"
             android:textAllCaps="false"
             android:textColor="#ffffff"
             android:onClick="onClickContinue"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="normal|bold" />
     </LinearLayout>
 

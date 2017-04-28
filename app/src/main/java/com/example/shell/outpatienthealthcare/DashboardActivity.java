@@ -10,10 +10,12 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import com.example.shell.outpatienthealthcare.model.User;
 import com.example.shell.outpatienthealthcare.rest.RestAPIClient;
+import com.example.shell.outpatienthealthcare.common.Constants;
 
 import java.util.List;
 
@@ -46,27 +48,33 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         //navigationView.getMenu().findItem(R.id.action_signin).setVisible(false);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        /*
         ProgressBar caloriesburntprogress = (ProgressBar) findViewById(R.id.calories_burnt_circle_progress_bar);
         caloriesburntprogress.setProgress(20);
         //getAllUsers();
+
+        */
     }
 
-    private void getAllUsers(){
-        Call<User> call = RestAPIClient.get().getUsers(user);
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                Log.i("User Details","Fetched successfully");
-                user = response.body();
-            }
 
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.i("User Details","couldn't fetch");
-            }
-        });
+    public void onClickHeartRate(View view){
+        Intent intent = new Intent(DashboardActivity.this, HeartRateActivity.class);
+        intent.putExtra(SignUpActivity.USER, user);
+        startActivity(intent);
     }
+
+    public void onClickBP(View view){
+        Intent intent = new Intent(DashboardActivity.this, BloodPressureActivity.class);
+        intent.putExtra(SignUpActivity.USER, user);
+        startActivity(intent);
+    }
+
+    public void onClickActivity(View view){
+        Intent intent = new Intent(DashboardActivity.this, ActivityDataActivity.class);
+        intent.putExtra(SignUpActivity.USER, user);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

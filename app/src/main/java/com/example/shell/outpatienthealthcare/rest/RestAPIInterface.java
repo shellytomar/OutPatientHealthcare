@@ -1,8 +1,11 @@
 package com.example.shell.outpatienthealthcare.rest;
 
 
+import com.example.shell.outpatienthealthcare.model.BloodPressure;
+import com.example.shell.outpatienthealthcare.model.HeartBeat;
 import com.example.shell.outpatienthealthcare.model.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,12 +21,15 @@ import retrofit2.http.Path;
         // Callback for the parsed response is the parameter
 
         @POST("users")
-        Call<User> registerUser(User user);
+        Call<User> registerUser(@Body User user);
 
-        @GET("user")
-        Call<User> readAllUsers(User user);
+        @GET("users/{email}/{password}")
+        Call<User> login(@Path("email") String email,@Path("password") String password );
 
-        @POST("user/signin")
-        Call<User> signin(User user);
+        @GET ("heartbeat")
+        Call<ArrayList<HeartBeat>> getAllHeartBeat();
+
+        @GET ("bloodpressure")
+        Call<ArrayList<BloodPressure>> getAllBp();
     }
 

@@ -7,13 +7,13 @@ import java.io.Serializable;
  */
 
 public class BloodPressure implements Serializable {
-    private int bpInfoID;
+    private int id;
     private int systolicBP;
     private int diastolicBP;
     private String dateTime;
 
-    public void setBpInfoID(int bpInfoID) {
-        this.bpInfoID = bpInfoID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setSystolicBP(int systolicBP) {
@@ -29,8 +29,8 @@ public class BloodPressure implements Serializable {
     }
 
 
-    public int getBpInfoID() {
-        return bpInfoID;
+    public int getId() {
+        return id;
     }
 
     public int getSystolicBP() {

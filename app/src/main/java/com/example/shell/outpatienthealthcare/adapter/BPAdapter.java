@@ -31,14 +31,14 @@ public class BPAdapter extends RecyclerView.Adapter<BPAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(BPAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.tvDate.setText(bp.get(i).getDateTime());
-        viewHolder.tvSystolicValue.setText(bp.get(i).getSystolicBP());
-        viewHolder.tvDiastolicValue.setText(bp.get(i).getDiastolicBP());
+        viewHolder.tvDate.setText(String.valueOf(bp.get(i).getDateTime()));
+        viewHolder.tvSystolicValue.setText(Integer.toString(bp.get(i).getSystolicBP()));
+        viewHolder.tvDiastolicValue.setText(Integer.toString(bp.get(i).getDiastolicBP()));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (bp == null) ? 0 :bp.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -50,7 +50,7 @@ public class BPAdapter extends RecyclerView.Adapter<BPAdapter.ViewHolder> {
 
             tvDate = (TextView)view.findViewById(R.id.tvDate);
             tvSystolicValue = (TextView)view.findViewById(R.id.tvSystolicValue);
-            tvSystolicValue = (TextView)view.findViewById(R.id.tvSystolicValue);
+            tvDiastolicValue = (TextView)view.findViewById(R.id.tvDiastolicValue);
 
         }
     }

@@ -24,7 +24,7 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".SignUpConfirmationActivity" />
-        <activity android:name=".StepDataActivity" />
+        <activity android:name=".ActivityDataActivity" />
         <activity android:name=".BloodPressureActivity" />
         <activity android:name=".HeartRateActivity"></activity>
     </application>

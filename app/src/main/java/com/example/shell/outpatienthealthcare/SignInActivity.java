@@ -32,16 +32,31 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void onClickSignIn(View view){
-        if (view.getId() == R.id.signInButton) {
-            Intent i = new Intent(SignInActivity.this, DashboardActivity.class);
-            startActivity(i);
+        EditText email = (EditText)findViewById(R.id.email);
+        EditText password = (EditText)findViewById(R.id.password);
+        if(email!=null && password!=null) {
+            user = new User();
+            user.setEmail(email.getText().toString());
+            user.setPassword(password.getText().toString());
+            fetchUser();
+
+        }else{
+            AlertDialog.Builder builder = new AlertDialog.Builder(SignInActivity.this);
+            builder.setMessage("Please enter email and password")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(SignInActivity.this, SignInActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
     }
 
-
-
     private void fetchUser(){
-        Call<User> call = RestAPIClient.get().signin(user);
+        Call<User> call = RestAPIClient.get().login(user.getEmail(), user.getPassword());
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -50,7 +65,7 @@ public class SignInActivity extends AppCompatActivity {
                 Log.i("user",user.getName());
                 if(user.getUserId()>0) {
                     Intent intent = new Intent(SignInActivity.this, DashboardActivity.class);
-                    intent.putExtra(SignUpActivity.USER, user);
+                   // intent.putExtra(UserDetailsActivity.USER, user);
                     startActivity(intent);
                 }
             }

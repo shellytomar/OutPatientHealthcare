@@ -97,15 +97,15 @@
             android:orientation="horizontal">
 
             <Button
-                android:text="Steps"
+                android:text="Activity"
                 android:layout_width="150dp"
                 android:layout_height="130dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
                 android:id="@+id/buttonSteps"
                 android:background= "@drawable/blue_button"
-                android:onClick="onClickSteps"
+                android:onClick="onClickActivity"
                 android:drawablePadding="-10dp"
-                android:drawableTop="@drawable/steps"
+                android:drawableTop="@drawable/exercise"
                 android:textSize="24sp"
                 android:textColor="@color/white"/>
 
@@ -143,7 +143,7 @@
                 android:drawableTop="@drawable/hearticon"
                 android:background="@drawable/blue_button"
                 android:drawablePadding="-10dp"
-                android:onClick="onClickArticle"
+                android:onClick="onClickHeartRate"
                 android:layout_below="@+id/button"
                 android:textSize="24sp"/>
 

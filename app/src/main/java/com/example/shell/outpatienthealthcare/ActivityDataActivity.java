@@ -3,7 +3,7 @@ package com.example.shell.outpatienthealthcare;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class StepDataActivity extends AppCompatActivity {
+public class ActivityDataActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
