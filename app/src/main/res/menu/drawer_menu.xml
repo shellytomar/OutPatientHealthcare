@@ -10,14 +10,19 @@
             android:icon="@drawable/home"></item>
 
         <item
-            android:id="@+id/action_steps"
-            android:title="Steps"
+            android:id="@+id/action_activity"
+            android:title="Activity"
             android:icon="@drawable/black_steps"/>
 
         <item
-            android:id="@+id/action_addFood"
-            android:title="Add Food"
-            android:icon="@drawable/black_food"></item>
+            android:id="@+id/action_bp"
+            android:title="Blood Pressure"
+            android:icon="@drawable/black_bp"></item>
+
+        <item
+            android:id="@+id/action_hr"
+            android:title="Heart Rate"
+            android:icon="@drawable/black_hr"></item>
 
         <item
             android:id="@+id/action_reports"
