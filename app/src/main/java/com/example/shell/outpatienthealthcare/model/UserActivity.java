@@ -8,10 +8,34 @@ import java.io.Serializable;
 
 public class UserActivity implements Serializable {
 
-    private int userId;
-    private int stepCount;
-    private int caloriesBurned;
+    private int id;
+    private int steps;
+    private int calories;
     private String date;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
+
+    public void setSteps(int steps) {
+        this.steps = steps;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
 
     public String getDate() {
         return date;
@@ -20,30 +44,4 @@ public class UserActivity implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public int getStepCount() {
-        return stepCount;
-    }
-
-    public void setStepCount(int stepCount) {
-        this.stepCount = stepCount;
-    }
-
-    public int getCaloriesBurned() {
-        return caloriesBurned;
-    }
-
-    public void setCaloriesBurned(int caloriesBurned) {
-        this.caloriesBurned = caloriesBurned;
-    }
-
-
 }

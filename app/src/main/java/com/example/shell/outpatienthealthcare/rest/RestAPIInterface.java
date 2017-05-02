@@ -4,6 +4,7 @@ package com.example.shell.outpatienthealthcare.rest;
 import com.example.shell.outpatienthealthcare.model.BloodPressure;
 import com.example.shell.outpatienthealthcare.model.HeartBeat;
 import com.example.shell.outpatienthealthcare.model.User;
+import com.example.shell.outpatienthealthcare.model.UserActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +32,11 @@ import retrofit2.http.Path;
 
         @GET ("bloodpressure")
         Call<ArrayList<BloodPressure>> getAllBp();
+
+        @GET ("activity")
+        Call<ArrayList<UserActivity>> getAllActivity();
+
+        @GET ("activity/{date}")
+        Call<UserActivity> getCurrentStepCount(@Path("date") String date);
     }
 

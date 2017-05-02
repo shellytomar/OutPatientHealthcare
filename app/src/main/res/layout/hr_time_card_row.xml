@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvMaxValue"
         android:layout_toRightOf="@+id/tvMin"
-        android:paddingLeft="20dp"
+        android:paddingLeft="30dp"
         android:paddingTop="5dp"
         android:text="minValue"
         android:textColor="@color/text_gray"

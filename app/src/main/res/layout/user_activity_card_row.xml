@@ -29,7 +29,7 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <!-- TextView for displaying Max Heart Rate value-->
+        <!-- TextView for displaying Step Count value-->
         <TextView
             android:id="@+id/tvSteps"
             android:layout_width="wrap_content"
@@ -48,14 +48,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvDate"
             android:layout_toRightOf="@+id/tvSteps"
-            android:paddingLeft="20dp"
+            android:paddingLeft="36dp"
             android:paddingTop="5dp"
             android:text="maxValue"
             android:textColor="@color/text_gray"
             android:textSize="16sp" />
 
 
-        <!-- TextView for displaying Min Heart Rate Value-->
+        <!-- TextView for displaying Calorie Burned Value-->
         <TextView
             android:id="@+id/tvCalories"
             android:layout_width="wrap_content"

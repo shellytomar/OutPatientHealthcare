@@ -1,6 +1,8 @@
 package com.example.shell.outpatienthealthcare;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +18,6 @@ import com.example.shell.outpatienthealthcare.model.BloodPressure;
 import com.example.shell.outpatienthealthcare.rest.RestAPIClient;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,39 +79,33 @@ public class BloodPressureActivity extends AppCompatActivity implements Navigati
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        /*
         int id = item.getItemId();
         Log.i("id is:", "" + id);
         System.out.print(id);
-        System.out.print(R.id.action_steps);
+        System.out.print(R.id.action_activity);
         if (id == R.id.action_logout) {
-            Intent i = new Intent(DashboardActivity.this, SignUpActivity.class);
+            Intent i = new Intent(BloodPressureActivity.this, SignInActivity.class);
             startActivity(i);
-        } else if (id == R.id.action_steps) {
-            Intent i = new Intent(DashboardActivity.this,StepCountActivity.class);
-            i.putExtra(UserDetailsActivity.USER, user);
-            i.putExtra(Constants.DIET, diet);
+        } else if(id == R.id.home){
+            Intent i = new Intent(BloodPressureActivity.this, DashboardActivity.class);
             startActivity(i);
-        }else if (id == R.id.action_addFood) {
-            Intent i = new Intent(Dashboard.this,FoodDetailsActivity.class);
-            i.putExtra(UserDetailsActivity.USER, user);
-            i.putExtra(Constants.DIET, diet);
+        }
+        else if (id == R.id.action_activity) {
+            Intent i = new Intent(BloodPressureActivity.this,StepCountActivity.class);
             startActivity(i);
-        }else if (id == R.id.action_articles) {
-            Intent i = new Intent(Dashboard.this,ArticlesActivity.class);
-            i.putExtra(UserDetailsActivity.USER, user);
-            i.putExtra(Constants.DIET, diet);
+        }else if (id == R.id.action_bp) {
+            Intent i = new Intent(BloodPressureActivity.this,BloodPressureActivity.class);
+            startActivity(i);
+        }else if (id == R.id.action_hr) {
+            Intent i = new Intent(BloodPressureActivity.this,HeartRateActivity.class);
             startActivity(i);
         }else if (id == R.id.action_reports) {
-            Intent i = new Intent(Dashboard.this, ReportActivity.class);
-            i.putExtra(UserDetailsActivity.USER, user);
-            i.putExtra(Constants.DIET, diet);
+            Intent i = new Intent(BloodPressureActivity.this, ReportActivity.class);
             startActivity(i);
         }else if (id == R.id.exit) {
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        */
         return true;
     }
 

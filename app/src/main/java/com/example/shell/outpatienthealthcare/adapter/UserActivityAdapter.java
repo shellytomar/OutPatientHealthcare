@@ -31,15 +31,15 @@ public class UserActivityAdapter extends RecyclerView.Adapter<UserActivityAdapte
 
     @Override
     public void onBindViewHolder(UserActivityAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.tvDate.setText(userActivity.get(i).getDate());
-        viewHolder.tvSteps.setText(userActivity.get(i).getStepCount());
-        viewHolder.tvCalories.setText(userActivity.get(i).getCaloriesBurned());
+        viewHolder.tvDate.setText(String.valueOf(userActivity.get(i).getDate()));
+        viewHolder.tvSteps.setText(Integer.toString(userActivity.get(i).getSteps()));
+        viewHolder.tvCalories.setText(Integer.toString(userActivity.get(i).getCalories()));
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (userActivity == null) ? 0 :userActivity.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -50,8 +50,8 @@ public class UserActivityAdapter extends RecyclerView.Adapter<UserActivityAdapte
             super(view);
 
             tvDate = (TextView)view.findViewById(R.id.tvDate);
-            tvSteps = (TextView)view.findViewById(R.id.tvSteps);
-            tvCalories = (TextView)view.findViewById(R.id.tvCalories);
+            tvSteps = (TextView)view.findViewById(R.id.tvStepsValue);
+            tvCalories = (TextView)view.findViewById(R.id.tvCaloriesValue);
 
         }
     }

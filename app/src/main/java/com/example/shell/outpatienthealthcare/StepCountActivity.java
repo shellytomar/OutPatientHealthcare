@@ -13,30 +13,26 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.shell.outpatienthealthcare.adapter.HRAdapter;
-import com.example.shell.outpatienthealthcare.model.HeartBeat;
+import com.example.shell.outpatienthealthcare.adapter.UserActivityAdapter;
+import com.example.shell.outpatienthealthcare.model.UserActivity;
 import com.example.shell.outpatienthealthcare.rest.RestAPIClient;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-public class HeartRateActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class StepCountActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private RecyclerView recyclerView;
-    private HRAdapter adapter;
-    ArrayList<HeartBeat> heartBeat;
+    private UserActivityAdapter adapter;
+    ArrayList<UserActivity> userActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_heart_rate);
+        setContentView(R.layout.activity_step_data);
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -51,33 +47,37 @@ public class HeartRateActivity extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Log.i("Reached","Inside OnCreate");
         initViews();
     }
 
     private void initViews(){
         recyclerView = (RecyclerView)findViewById(R.id.card_recycler_view);
+        Log.i("Reached","Inside initViews");
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
-        getHeartBeatValues();
+        getUserActivityValues();
     }
 
-    private void getHeartBeatValues(){
-        Call<ArrayList<HeartBeat>> call = RestAPIClient.get().getAllHeartBeat();
-        call.enqueue(new Callback <ArrayList<HeartBeat>>() {
+    private void getUserActivityValues(){
+        Call<ArrayList<UserActivity>> call = RestAPIClient.get().getAllActivity();
+        Log.i("Reached","Inside getUserActivity");
+        call.enqueue(new Callback<ArrayList<UserActivity>>() {
             @Override
-            public void onResponse(Call<ArrayList<HeartBeat>> call, Response<ArrayList<HeartBeat>> response) {
-                heartBeat = response.body();
-                adapter = new HRAdapter(heartBeat);
+            public void onResponse(Call<ArrayList<UserActivity>> call, Response<ArrayList<UserActivity>> response) {
+                Log.i("Reached","Inside onResponse");
+                userActivity = response.body();
+                adapter = new UserActivityAdapter(userActivity);
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<ArrayList<HeartBeat>> call, Throwable t) {
-                Log.i("Error ", "Cannot get Heartbeat data");
-
+            public void onFailure(Call<ArrayList<UserActivity>> call, Throwable t) {
+                Log.i("Error ", "Cannot get User Activity data");
             }
         });
+
     }
 
     @Override
@@ -87,22 +87,22 @@ public class HeartRateActivity extends AppCompatActivity implements NavigationVi
         System.out.print(id);
         System.out.print(R.id.action_activity);
         if (id == R.id.action_logout) {
-            Intent i = new Intent(HeartRateActivity.this, SignInActivity.class);
+            Intent i = new Intent(StepCountActivity.this, SignInActivity.class);
             startActivity(i);
         } else if (id == R.id.home) {
-            Intent i = new Intent(HeartRateActivity.this, DashboardActivity.class);
+            Intent i = new Intent(StepCountActivity.this, DashboardActivity.class);
             startActivity(i);
         } else if (id == R.id.action_activity) {
-            Intent i = new Intent(HeartRateActivity.this, StepCountActivity.class);
+            Intent i = new Intent(StepCountActivity.this, StepCountActivity.class);
             startActivity(i);
         } else if (id == R.id.action_bp) {
-            Intent i = new Intent(HeartRateActivity.this, BloodPressureActivity.class);
+            Intent i = new Intent(StepCountActivity.this, BloodPressureActivity.class);
             startActivity(i);
         } else if (id == R.id.action_hr) {
-            Intent i = new Intent(HeartRateActivity.this, HeartRateActivity.class);
+            Intent i = new Intent(StepCountActivity.this, HeartRateActivity.class);
             startActivity(i);
         } else if (id == R.id.action_reports) {
-            Intent i = new Intent(HeartRateActivity.this, ReportActivity.class);
+            Intent i = new Intent(StepCountActivity.this, ReportActivity.class);
             startActivity(i);
         } else if (id == R.id.exit) {
         }
@@ -110,4 +110,5 @@ public class HeartRateActivity extends AppCompatActivity implements NavigationVi
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
