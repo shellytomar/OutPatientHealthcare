@@ -101,6 +101,9 @@ public class StepCountActivity extends AppCompatActivity implements NavigationVi
         } else if (id == R.id.action_hr) {
             Intent i = new Intent(StepCountActivity.this, HeartRateActivity.class);
             startActivity(i);
+        }else if (id == R.id.action_sync) {
+            Intent i = new Intent(StepCountActivity.this,SyncActivity.class);
+            startActivity(i);
         } else if (id == R.id.action_reports) {
             Intent i = new Intent(StepCountActivity.this, ReportActivity.class);
             startActivity(i);
