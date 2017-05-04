@@ -103,6 +103,9 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         }else if (id == R.id.action_hr) {
             Intent i = new Intent(DashboardActivity.this,HeartRateActivity.class);
             startActivity(i);
+        }else if (id == R.id.action_sync) {
+            Intent i = new Intent(DashboardActivity.this,SyncActivity.class);
+            startActivity(i);
         }else if (id == R.id.action_reports) {
             Intent i = new Intent(DashboardActivity.this, ReportActivity.class);
             startActivity(i);
@@ -115,14 +118,12 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     private void getCurrentActivityValues() {
         Log.i("Today's Date is ", CommonUtils.getTodaysDate());
-       // Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount(CommonUtils.getTodaysDate());
-        Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount("2017-04-30");
-        Log.i("Value of call is",call.toString());
+        Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount(CommonUtils.getTodaysDate());
+        //Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount("2017-04-30");
         call.enqueue(new Callback<UserActivity>() {
             @Override
             public void onResponse(Call<UserActivity> call, Response<UserActivity> response) {
                 userActivity = response.body();
-               // showValues();
                 mStepCount.setText(Integer.toString(userActivity.getSteps()));
                 mCalories.setText(Integer.toString(userActivity.getCalories()));
             }
@@ -136,8 +137,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     private void getCurrentHeartRateValues() {
         Log.i("Today's Date is ", CommonUtils.getTodaysDate());
-       // Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat(CommonUtils.getTodaysDate());
-        Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat("2017-05-02");
+        Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat(CommonUtils.getTodaysDate());
+        //Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat("2017-05-02");
         call.enqueue(new Callback<CurrentHeartBeat>() {
             @Override
             public void onResponse(Call<CurrentHeartBeat> call, Response<CurrentHeartBeat> response) {
@@ -158,13 +159,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         super.onSaveInstanceState(bundle);
     }
 
-    private void showValues(){
-        int stepCountValue = userActivity.getSteps();
-        int caloriesValue = userActivity.getCalories();
-
-        mStepCount.setText(Integer.toString(stepCountValue));
-        mCalories.setText(Integer.toString(caloriesValue));
-    }
 
 
 }

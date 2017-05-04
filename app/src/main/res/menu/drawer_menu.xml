@@ -25,6 +25,11 @@
             android:icon="@drawable/black_hr"></item>
 
         <item
+            android:id="@+id/action_sync"
+            android:title="Sync Devices"
+            android:icon="@drawable/black_sync"></item>
+
+        <item
             android:id="@+id/action_reports"
             android:title="Report"
             android:icon="@drawable/black_report"/>

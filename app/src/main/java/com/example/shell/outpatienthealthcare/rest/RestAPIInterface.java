@@ -2,6 +2,7 @@ package com.example.shell.outpatienthealthcare.rest;
 
 
 import com.example.shell.outpatienthealthcare.model.BloodPressure;
+import com.example.shell.outpatienthealthcare.model.CurrentHeartBeat;
 import com.example.shell.outpatienthealthcare.model.HeartBeat;
 import com.example.shell.outpatienthealthcare.model.User;
 import com.example.shell.outpatienthealthcare.model.UserActivity;
@@ -38,5 +39,8 @@ import retrofit2.http.Path;
 
         @GET ("activity/{date}")
         Call<UserActivity> getCurrentStepCount(@Path("date") String date);
+
+        @GET ("currentHeartRate/{date}")
+        Call<CurrentHeartBeat> getCurrentHeartBeat(@Path("date") String date);
     }
 

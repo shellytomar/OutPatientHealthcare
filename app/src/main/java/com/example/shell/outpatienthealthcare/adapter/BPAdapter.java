@@ -31,7 +31,7 @@ public class BPAdapter extends RecyclerView.Adapter<BPAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(BPAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.tvDate.setText(String.valueOf(bp.get(i).getDateTime()));
+        viewHolder.tvDate.setText(String.valueOf(bp.get(i).getDate()));
         viewHolder.tvSystolicValue.setText(Integer.toString(bp.get(i).getSystolicBP()));
         viewHolder.tvDiastolicValue.setText(Integer.toString(bp.get(i).getDiastolicBP()));
     }

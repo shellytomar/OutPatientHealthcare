@@ -99,6 +99,9 @@ public class BloodPressureActivity extends AppCompatActivity implements Navigati
         }else if (id == R.id.action_hr) {
             Intent i = new Intent(BloodPressureActivity.this,HeartRateActivity.class);
             startActivity(i);
+        }else if (id == R.id.action_sync) {
+            Intent i = new Intent(BloodPressureActivity.this,SyncActivity.class);
+            startActivity(i);
         }else if (id == R.id.action_reports) {
             Intent i = new Intent(BloodPressureActivity.this, ReportActivity.class);
             startActivity(i);

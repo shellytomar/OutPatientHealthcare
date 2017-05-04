@@ -10,7 +10,7 @@ public class BloodPressure implements Serializable {
     private int id;
     private int systolicBP;
     private int diastolicBP;
-    private String dateTime;
+    private String date;
 
     public void setId(int id) {
         this.id = id;
@@ -24,8 +24,8 @@ public class BloodPressure implements Serializable {
         this.diastolicBP = diastolicBP;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setDateTime(String date) {
+        this.date = date;
     }
 
 
@@ -41,8 +41,8 @@ public class BloodPressure implements Serializable {
         return diastolicBP;
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public String getDate() {
+        return date;
     }
 
 
