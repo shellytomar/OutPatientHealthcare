@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.shell.outpatienthealthcare.common.CommonUtils;
 import com.example.shell.outpatienthealthcare.model.BloodPressure;
+import com.example.shell.outpatienthealthcare.model.CurrentHeartBeat;
 import com.example.shell.outpatienthealthcare.model.User;
 import com.example.shell.outpatienthealthcare.model.UserActivity;
 import com.example.shell.outpatienthealthcare.rest.RestAPIClient;
@@ -27,7 +28,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     User user;
     UserActivity userActivity;
-    TextView mStepCount, mCalories;
+    CurrentHeartBeat currentHeartBeat;
+    TextView mStepCount, mCalories, mHeartRate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +59,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
         mStepCount = (TextView) findViewById(R.id.stepValue);
         mCalories = (TextView) findViewById(R.id.caloriesValue);
+        mHeartRate = (TextView) findViewById(R.id.hrValue);
 
-        getCurrentValues();
+        getCurrentActivityValues();
+        getCurrentHeartRateValues();
     }
 
 
@@ -109,20 +113,42 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         return true;
     }
 
-    private void getCurrentValues() {
+    private void getCurrentActivityValues() {
         Log.i("Today's Date is ", CommonUtils.getTodaysDate());
-        Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount(CommonUtils.getTodaysDate());
+       // Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount(CommonUtils.getTodaysDate());
+        Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount("2017-04-30");
         Log.i("Value of call is",call.toString());
         call.enqueue(new Callback<UserActivity>() {
             @Override
             public void onResponse(Call<UserActivity> call, Response<UserActivity> response) {
                 userActivity = response.body();
-                showValues();
+               // showValues();
+                mStepCount.setText(Integer.toString(userActivity.getSteps()));
+                mCalories.setText(Integer.toString(userActivity.getCalories()));
             }
 
             @Override
             public void onFailure(Call<UserActivity> call, Throwable t) {
                 Log.i("Error ", "Cannot fetch user activity details");
+            }
+        });
+    }
+
+    private void getCurrentHeartRateValues() {
+        Log.i("Today's Date is ", CommonUtils.getTodaysDate());
+       // Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat(CommonUtils.getTodaysDate());
+        Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat("2017-05-02");
+        call.enqueue(new Callback<CurrentHeartBeat>() {
+            @Override
+            public void onResponse(Call<CurrentHeartBeat> call, Response<CurrentHeartBeat> response) {
+                currentHeartBeat = response.body();
+                mHeartRate.setText(Integer.toString(currentHeartBeat.getValue()));
+
+            }
+
+            @Override
+            public void onFailure(Call<CurrentHeartBeat> call, Throwable t) {
+                Log.i("Error ", "Cannot fetch current Heart Rate details");
             }
         });
     }
