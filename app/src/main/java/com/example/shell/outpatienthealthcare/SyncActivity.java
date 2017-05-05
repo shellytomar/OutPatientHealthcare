@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 
 public class SyncActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,20 +35,21 @@ public class SyncActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    public void onClickActivity(View view){
-        /*
-        Intent intent = new Intent(DashboardActivity.this, StepCountActivity.class);
-        intent.putExtra(SignUpActivity.USER, user);
-        startActivity(intent);
-        */
+    public void onClickFitbit(View view){
+        String url;
+        url = "https://outpatient-healthcare.herokuapp.com/getfitbithr/";
+        WebView wbView = (WebView) findViewById(R.id.webView);
+        wbView.getSettings().setJavaScriptEnabled(true);
+        wbView.loadUrl(url);
+
     }
 
     public void onClickIHealth(View view){
-        /*
-        Intent intent = new Intent(DashboardActivity.this, StepCountActivity.class);
-        intent.putExtra(SignUpActivity.USER, user);
-        startActivity(intent);
-        */
+        String url;
+        url = "https://outpatient-healthcare.herokuapp.com/getihealth/";
+        WebView wbView = (WebView) findViewById(R.id.webView);
+        wbView.getSettings().setJavaScriptEnabled(true);
+        wbView.loadUrl(url);
     }
 
     @Override

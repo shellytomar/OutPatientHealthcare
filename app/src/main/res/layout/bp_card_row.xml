@@ -38,7 +38,7 @@
         android:layout_below="@id/tvDate"
         android:paddingTop="5dp"
         android:paddingLeft="20dp"
-        android:text="Systolic"
+        android:text="Diastolic"
         android:textColor="@color/text_pink"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -64,7 +64,7 @@
         android:layout_below="@id/systolic"
         android:paddingLeft="20dp"
         android:paddingTop="5dp"
-        android:text="Diastolic"
+        android:text="Systolic"
         android:textColor="@color/text_pink"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -80,6 +80,16 @@
         android:text="diastolicValue"
         android:textColor="@color/text_gray"
         android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDiastolicValue"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:id="@+id/tvMessage"
+        android:textColor="@color/green"
+        android:textSize="16sp"/>
 
 </RelativeLayout>
 

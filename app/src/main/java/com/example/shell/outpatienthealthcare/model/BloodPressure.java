@@ -45,5 +45,4 @@ public class BloodPressure implements Serializable {
         return date;
     }
 
-
 }

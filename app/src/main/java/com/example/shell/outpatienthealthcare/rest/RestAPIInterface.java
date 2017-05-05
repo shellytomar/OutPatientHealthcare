@@ -37,7 +37,7 @@ import retrofit2.http.Path;
         @GET ("activity")
         Call<ArrayList<UserActivity>> getAllActivity();
 
-        @GET ("activity/{date}")
+        @GET ("currentActivity/{date}")
         Call<UserActivity> getCurrentStepCount(@Path("date") String date);
 
         @GET ("currentHeartRate/{date}")

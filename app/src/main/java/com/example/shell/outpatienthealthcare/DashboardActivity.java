@@ -57,6 +57,12 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
         */
 
+        if(savedInstanceState!=null){
+            user = (User) savedInstanceState.getSerializable(SignUpActivity.USER);
+        }else {
+            user = (User) getIntent().getSerializableExtra(SignUpActivity.USER);
+        }
+
         mStepCount = (TextView) findViewById(R.id.stepValue);
         mCalories = (TextView) findViewById(R.id.caloriesValue);
         mHeartRate = (TextView) findViewById(R.id.hrValue);
@@ -119,7 +125,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     private void getCurrentActivityValues() {
         Log.i("Today's Date is ", CommonUtils.getTodaysDate());
         Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount(CommonUtils.getTodaysDate());
-        //Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount("2017-04-30");
+        //Call<UserActivity> call = RestAPIClient.get().getCurrentStepCount("2017-05-03");
         call.enqueue(new Callback<UserActivity>() {
             @Override
             public void onResponse(Call<UserActivity> call, Response<UserActivity> response) {
@@ -138,7 +144,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     private void getCurrentHeartRateValues() {
         Log.i("Today's Date is ", CommonUtils.getTodaysDate());
         Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat(CommonUtils.getTodaysDate());
-        //Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat("2017-05-02");
+        //Call<CurrentHeartBeat> call = RestAPIClient.get().getCurrentHeartBeat("2017-05-03");
         call.enqueue(new Callback<CurrentHeartBeat>() {
             @Override
             public void onResponse(Call<CurrentHeartBeat> call, Response<CurrentHeartBeat> response) {

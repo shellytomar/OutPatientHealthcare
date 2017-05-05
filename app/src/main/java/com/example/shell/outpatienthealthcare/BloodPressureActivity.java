@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.example.shell.outpatienthealthcare.adapter.BPAdapter;
 import com.example.shell.outpatienthealthcare.model.BloodPressure;
+import com.example.shell.outpatienthealthcare.model.User;
 import com.example.shell.outpatienthealthcare.rest.RestAPIClient;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ import retrofit2.Response;
 
 public class BloodPressureActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    User user;
     private RecyclerView recyclerView;
     private BPAdapter adapter;
     ArrayList<BloodPressure> bloodPressure;
