@@ -90,6 +90,12 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         startActivity(intent);
     }
 
+    public void onClickReport(View view){
+        Intent intent = new Intent(DashboardActivity.this, ReportActivity.class);
+        intent.putExtra(SignUpActivity.USER, user);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

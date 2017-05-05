@@ -26,7 +26,7 @@ public class SignUpConfirmationActivity extends AppCompatActivity {
 
     public void onCLickContinue(View view){
         if (view.getId() == R.id.congrats_continue) {
-            Intent i = new Intent(SignUpConfirmationActivity.this, DashboardActivity.class);
+            Intent i = new Intent(SignUpConfirmationActivity.this, SignInActivity.class);
             i.putExtra(SignUpActivity.USER, user);
             startActivity(i);
         }

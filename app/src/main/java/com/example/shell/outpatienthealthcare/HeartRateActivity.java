@@ -17,10 +17,7 @@ import com.example.shell.outpatienthealthcare.adapter.HRAdapter;
 import com.example.shell.outpatienthealthcare.model.HeartBeat;
 import com.example.shell.outpatienthealthcare.rest.RestAPIClient;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 
 import retrofit2.Call;
 import retrofit2.Callback;
