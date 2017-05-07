@@ -46,7 +46,17 @@
         <activity
             android:name=".SyncActivity"
             android:label="@string/title_activity_sync"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".BPReportActivity"
+            android:label="@string/title_activity_bpreport"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".DailyReportActivity"
+            android:label="@string/title_activity_daily_report"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

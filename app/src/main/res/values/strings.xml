@@ -6,6 +6,8 @@
     <string name="title_activity_step_data">Activity</string>
     <string name="title_activity_report">Report</string>
     <string name="title_activity_sync">Sync Devices</string>
+    <string name="title_activity_bpreport">BP Report</string>
+    <string name="title_activity_daily_report">Daily Activity Report</string>
 
     <string name="action_settings">Settings</string>
     <string name="navigation_drawer_open">Drawer Open</string>

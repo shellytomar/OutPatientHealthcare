@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 public class ReportActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -31,6 +32,16 @@ public class ReportActivity extends AppCompatActivity implements NavigationView.
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void onClickBPReport(View view){
+        Intent intent = new Intent(ReportActivity.this, BPReportActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickActivityReport(View view){
+        Intent intent = new Intent(ReportActivity.this, DailyReportActivity.class);
+        startActivity(intent);
     }
 
     @Override
