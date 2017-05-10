@@ -37,7 +37,7 @@ public class SyncActivity extends AppCompatActivity implements NavigationView.On
 
     public void onClickFitbit(View view){
         String url;
-        url = "https://outpatient-healthcare.herokuapp.com/getfitbithr/";
+        url = "http://f2695a11.ngrok.io/getfitbithr/";
         WebView wbView = (WebView) findViewById(R.id.webView);
         wbView.getSettings().setJavaScriptEnabled(true);
         wbView.loadUrl(url);
@@ -46,7 +46,7 @@ public class SyncActivity extends AppCompatActivity implements NavigationView.On
 
     public void onClickIHealth(View view){
         String url;
-        url = "https://outpatient-healthcare.herokuapp.com/getihealth/";
+        url = "http://f2695a11.ngrok.io/getihealth/";
         WebView wbView = (WebView) findViewById(R.id.webView);
         wbView.getSettings().setJavaScriptEnabled(true);
         wbView.loadUrl(url);
