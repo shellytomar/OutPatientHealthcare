@@ -7,6 +7,6 @@ public class CommonUtils {
 
     public static String getTodaysDate(){
         Calendar c = Calendar.getInstance();
-        return c.get(Calendar.YEAR)+"-0"+String.valueOf(c.get(Calendar.MONTH)+1)+"-0"+c.get(Calendar.DAY_OF_MONTH);
+        return c.get(Calendar.YEAR)+"-0"+String.valueOf(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DAY_OF_MONTH);
     }
 }

@@ -70,17 +70,17 @@ public class BPReportActivity extends AppCompatActivity implements NavigationVie
 
         List<String> h_lables = new ArrayList<>();
         h_lables.add("0.0");
-        h_lables.add("04/04");
-        h_lables.add("04/06");
-        h_lables.add("04/16");
-        h_lables.add("04/27");
-        h_lables.add("04/30");
-        h_lables.add("05/01");
-        h_lables.add("05/02");
-        h_lables.add("05/03");
-        h_lables.add("05/04");
         h_lables.add("05/05");
         h_lables.add("05/06");
+        h_lables.add("05/07");
+        h_lables.add("05/08");
+        h_lables.add("05/09");
+        h_lables.add("05/10");
+        h_lables.add("05/11");
+        h_lables.add("05/12");
+        h_lables.add("05/13");
+        h_lables.add("05/14");
+        h_lables.add("05/15");
 
         multiBarChart.setHorizontal_label(h_lables);
 
